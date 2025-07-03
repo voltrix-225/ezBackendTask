@@ -1,0 +1,284 @@
+{
+	"info": {
+		"_postman_id": "e7e7951c-e308-4adf-be02-167f33a85587",
+		"name": "EZBackend",
+		"description": "Internship project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39394844"
+	},
+	"item": [
+		{
+			"name": "CLIENT USER",
+			"item": [
+				{
+					"name": "signupUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"TestUser\",\r\n  \"email\": \"test@example.com\",\r\n  \"pwd\": \"1234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"signup"
+							]
+						},
+						"description": "## Signup API Endpoint\n\nThis endpoint is used to create a new user account in the system. It accepts user details and returns a response indicating the success of the signup process.\n\n### Request\n\n- **Method**: POST\n    \n- **URL**: `http://127.0.0.1:8000/signup`\n    \n\n#### Request Body\n\nThe request body must be in JSON format and should include the following parameters:\n\n- `name` (string): The name of the user. This is a required field.\n    \n- `email` (string): The email address of the user. This must be a valid email format and is required.\n    \n- `pwd` (string): The password for the user account. This is a required field.\n    \n\n**Example Request Body:**\n\n``` json\n{\n  \"name\": \"TestUser\",\n  \"email\": \"test@example.com\",\n  \"pwd\": \"1234\"\n}\n\n ```\n\n### Response\n\nUpon successful account creation, the API will respond with a status code of `200` and a JSON object. The structure of the response is as follows:\n\n- `encrypted_url` (string): A URL that may be used for further actions related to the user account. The value may be empty, depending on the implementation.\n    \n\n**Example Response:**\n\n``` json\n{\n  \"encrypted_url\": \"\"\n}\n\n ```\n\n### Summary\n\nThis API endpoint is essential for user registration, allowing new users to create accounts by providing their name, email, and password. The response will confirm the successful creation of the account and provide an encrypted URL for further interactions."
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@example.com\",\r\n  \"pwd\": \"1234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-email_User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/verify/YTI4MjM3MmYtMTFmMi00ZDBiLWE2M2MtMWZiNzcwMmU5MWZh",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"verify",
+								"YTI4MjM3MmYtMTFmMi00ZDBiLWE2M2MtMWZiNzcwMmU5MWZh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getDownloadLink",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "auth",
+								"value": "Token 04ec0ea2-42fc-4c8b-8c27-0949e2b70377",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/download-link/b654fc91-cd2d-456c-9566-a2e47bef6a39",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"download-link",
+								"b654fc91-cd2d-456c-9566-a2e47bef6a39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "downloadFile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
+			"description": "Client side"
+		},
+		{
+			"name": "OPS USER",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ops@example.com\",\r\n  \"pwd\": \"1234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Ops User\",\r\n  \"email\": \"ops@example.com\",\r\n  \"pwd\": \"1234\",\r\n  \"role\": \"ops\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/signup",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/verify/MGFiYWJjNzktOTgzYS00YzY2LTgxNjktNTEzYjhhY2Y3NDYz",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"verify",
+								"MGFiYWJjNzktOTgzYS00YzY2LTgxNjktNTEzYjhhY2Y3NDYz"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "auth",
+								"value": "Token 60e29bdd-8b6a-44ff-bed1-a6514e948034",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"description": "File",
+									"type": "file",
+									"src": "/C:/Users/voltr/OneDrive/Documents/Test file.docx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/upload",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "ops user side(file uploader"
+		}
+	]
+}
